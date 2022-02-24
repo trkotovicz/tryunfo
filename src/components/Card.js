@@ -41,5 +41,7 @@ cardTrunfo
 If inline com o Operador Lógico &&
 Em JavaScript, true && expressão são sempre avaliadas como expressão, e false && expressão são sempre avaliadas como false.
 Portanto, se a condição é true, o elemento logo depois do && irá aparecer no resultado. Se o elemento é false, React irá ignora-lo.
-REFERÊNCIA (https://pt-br.reactjs.org/docs/conditional-rendering.html)
+REFERÊNCIA
+(https://medium.com/reactbrasil/renderiza%C3%A7%C3%A3o-condicional-em-react-bb8c16dddd6f)
+(https://pt-br.reactjs.org/docs/conditional-rendering.html)
 */
