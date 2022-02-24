@@ -11,18 +11,23 @@ class App extends React.Component {
     this.state = {
       name: '',
       description: '',
-      attr1: 0,
-      attr2: 0,
-      attr3: 0,
+      attr1: '',
+      attr2: '',
+      attr3: '',
       image: '',
-      rarity: normal,
+      rarity: 'normal',
       isTrunfo: false,
       hasTrunfo: false,
     };
   }
 
-  handleChange() {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
@@ -43,6 +48,7 @@ class App extends React.Component {
           cardRare={ rarity }
           cardTrunfo={ isTrunfo }
           hasTrunfo={ hasTrunfo }
+          onInputChange={ this.handleChange }
         />
         <Card
           cardName={ name }
@@ -54,6 +60,7 @@ class App extends React.Component {
           cardRare={ rarity }
           cardTrunfo={ isTrunfo }
           hasTrunfo={ hasTrunfo }
+          onInputChange={ this.handleChange }
         />
       </>
     );
