@@ -15,10 +15,11 @@ class App extends React.Component {
       attr1: '0',
       attr2: '0',
       attr3: '0',
-      image: '',
+      image: 'https://pbs.twimg.com/media/Ey42PUvXEAQKZ3F.png',
       rarity: 'normal',
       isTrunfo: false,
       // hasTrunfo: false,
+      cardList: [],
     };
   }
 
@@ -31,8 +32,41 @@ class App extends React.Component {
     });
   }
 
+  // Obtive a ajuda do Murilo Costa para entender a lógica desse requisito
+  addNewCard = () => {
+    const { name, description, image,
+      attr1, attr2, attr3, rarity, isTrunfo } = this.state;
+
+    // cria um obj que recebe os estados do formulário
+    const newCard = {
+      name,
+      description,
+      image,
+      attr1,
+      attr2,
+      attr3,
+      rarity,
+      isTrunfo,
+    };
+
+    // coloca o newCard dentro do cardList e limpa o estado do componente pai
+    this.setState((prevState) => ({
+      name: '',
+      description: '',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '',
+      rarity: 'normal',
+      isTrunfo: false,
+      cardList: [...prevState.cardList, newCard],
+    }));
+  }
+
   handleSubmit= (event) => {
     event.preventDefault();
+    // chama a func de salvar carta
+    this.addNewCard();
   }
 
   validate = () => {
@@ -70,10 +104,6 @@ class App extends React.Component {
 
     return buttonDisable;
   }
-
-  // onSaveButtonClick = () => {
-
-  // }
 
   render() {
     const { name, description, attr1,
