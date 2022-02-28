@@ -8,10 +8,10 @@ class Form extends React.Component {
       cardAttr2, cardAttr3, cardImage,
       cardRare, cardTrunfo, /* hasTrunfo, */
       isSaveButtonDisabled, onInputChange,
-      onSaveButtonClick } = this.props;
+      onSaveButtonClick, onSubmit } = this.props;
 
     return (
-      <form>
+      <form onSubmit={ onSubmit }>
 
         <label htmlFor="name-input">
           Nome da Carta
@@ -53,6 +53,8 @@ class Form extends React.Component {
             data-testid="attr2-input"
             id="attr2-input"
             name="attr2"
+            min={ 0 }
+            max={ 90 }
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
@@ -65,6 +67,8 @@ class Form extends React.Component {
             data-testid="attr3-input"
             id="attr3-input"
             name="attr3"
+            min={ 0 }
+            max={ 90 }
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
@@ -131,10 +135,11 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
-  isSaveButtonDisabled: PropTypes.bool,
   onInputChange: PropTypes.func.isRequired,
-  onSaveButtonClick: PropTypes.func,
+  // hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;
