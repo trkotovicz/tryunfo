@@ -41,6 +41,8 @@ class Form extends React.Component {
             data-testid="attr1-input"
             id="attr1-input"
             name="attr1"
+            min={ 0 }
+            max={ 90 }
             value={ cardAttr1 }
             onChange={ onInputChange }
           />

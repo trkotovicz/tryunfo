@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Card from './components/Card';
+import CardListComponent from './components/CardListComponent';
 import Form from './components/Form';
 
 class App extends React.Component {
@@ -100,6 +101,7 @@ class App extends React.Component {
     }), this.verifyTrunfo);
   }
 
+  // Obtive a ajuda do Gabriel Pinheiro na monitoria para entender o setState nesse requisito
   verifyTrunfo = () => {
     const { cardList } = this.state;
 
@@ -117,7 +119,7 @@ class App extends React.Component {
   render() {
     const { name, description, attr1,
       attr2, attr3, image, rarity,
-      isTrunfo, hasTrunfo } = this.state;
+      isTrunfo, hasTrunfo, cardList } = this.state;
 
     return (
       <>
@@ -146,6 +148,9 @@ class App extends React.Component {
           cardRare={ rarity }
           cardTrunfo={ isTrunfo }
           hasTrunfo={ hasTrunfo }
+        />
+        <CardListComponent
+          cardList={ cardList }
         />
       </>
     );
