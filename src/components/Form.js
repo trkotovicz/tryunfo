@@ -8,7 +8,7 @@ class Form extends React.Component {
       cardAttr2, cardAttr3, cardImage,
       cardRare, cardTrunfo, hasTrunfo,
       isSaveButtonDisabled, onInputChange,
-      onSaveButtonClick, onSubmit } = this.props;
+      onSaveButtonClick, onSubmit, deleteButton } = this.props;
 
     return (
       <form onSubmit={ onSubmit }>
@@ -123,6 +123,15 @@ class Form extends React.Component {
           Salvar
         </button>
 
+        <button
+          type="submit"
+          data-testid="delete-button"
+          name="delete"
+          onClick={ deleteButton }
+        >
+          Excluir
+        </button>
+
       </form>
     );
   }
@@ -142,6 +151,7 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  deleteButton: PropTypes.func.isRequired,
 };
 
 export default Form;

@@ -110,6 +110,22 @@ class App extends React.Component {
     this.setState({ hasTrunfo: trunfoCard });
   }
 
+  // Passa nos testes mas o comportamento na página ainda está esquisito (apaga o estado todo ao clicar)
+  deleteCard = () => {
+    // Função que só 'reseta' o state e apaga as infos. É chamada ao clicar no botão de excluir
+    this.setState({
+      name: '',
+      description: '',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '',
+      rarity: 'normal',
+      isTrunfo: false,
+      cardList: [],
+    });
+  }
+
   handleSubmit= (event) => {
     event.preventDefault();
     // chama a func de salvar carta
@@ -137,6 +153,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ this.validate() }
           onSubmit={ this.handleSubmit }
+          deleteButton={ this.deleteCard }
         />
         <Card
           cardName={ name }
