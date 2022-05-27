@@ -13,7 +13,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={ onSubmit }>
 
-        <label htmlFor="name-input">
+        <label htmlFor="name-input" className="name-input">
           Nome da Carta
           <input
             type="text"
@@ -29,13 +29,14 @@ class Form extends React.Component {
           data-testid="description-input"
           placeholder="Descrição da carta"
           id="description-input"
+          className="description-input"
           name="description"
           value={ cardDescription }
           onChange={ onInputChange }
         />
 
         <label htmlFor="attr1-input">
-          Attr1
+          Força
           <input
             type="number"
             data-testid="attr1-input"
@@ -49,7 +50,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="attr2-input">
-          Attr2
+          Coragem
           <input
             type="number"
             data-testid="attr2-input"
@@ -63,7 +64,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="attr3-input">
-          Attr3
+          Velocidade
           <input
             type="number"
             data-testid="attr3-input"
@@ -77,7 +78,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="image-input">
-          Imagem da carta.
+          <p>Imagem da carta: </p>
           <input
             type="text"
             data-testid="image-input"
